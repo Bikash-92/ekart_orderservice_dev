@@ -16,15 +16,15 @@ import org.springframework.kafka.support.serializer.JsonSerializer;
 import java.util.HashMap;
 import java.util.Map;
 
-//@Configuration
+@Configuration
 public class kafkaConfig {
 
     //private static final String BOOTSTRAP_SERVERS = "localhost:9092";
 
- //   @Value("${kafka.bootstrap-server}")
+    @Value("${kafka.bootstrap-server}")
     private String bootstrapServer;
 
-  //  @Bean
+    @Bean
     public Map<String, Object> producerConfig() {
         Map<String, Object> props = new HashMap<>();
         props.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, bootstrapServer);
@@ -33,12 +33,12 @@ public class kafkaConfig {
         return props;
     }
 
-  //  @Bean
+    @Bean
     public ProducerFactory<String, Object> producerFactory() {
         return new DefaultKafkaProducerFactory<>(producerConfig());
     }
-
-//    @Bean
+    
+    @Bean
     public KafkaTemplate<String, Object> kafkaTemplate(){
         return new KafkaTemplate<>(producerFactory());
     }
