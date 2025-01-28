@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 
 @RestController
@@ -20,12 +21,14 @@ public class OrderControllerImpl implements OrderController {
     private PlaceOrderService placeOrderService;
 
     @Override
+    @ResponseBody
     public ResponseEntity<GenericResponse> publishMessage(Order order) {
         GenericResponse genericResponse = placeOrderService.placeOrder(order);
         return new ResponseEntity<>(genericResponse, HttpStatus.OK);
     }
 
     @Override
+    @ResponseBody
     public ResponseEntity<GenericResponse> checkApi() {
         System.out.println("Working...");
         return null;
