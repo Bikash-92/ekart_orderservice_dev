@@ -1,5 +1,5 @@
 # Stage 1: Build the JAR using Maven
-FROM maven:3.8.6-openjdk-17-slim-buster as builder
+FROM eclipse-temurin:17-jdk as builder
 
 
 # Set the working directory inside the container
