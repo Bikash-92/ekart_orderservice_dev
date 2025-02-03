@@ -1,5 +1,5 @@
 # Stage 1: Build the JAR using Maven
-FROM eclipse-temurin:17-jdk as builder
+FROM maven:3.8.4-openjdk-17 AS build-java17
 
 
 # Set the working directory inside the container
