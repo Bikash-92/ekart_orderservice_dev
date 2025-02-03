@@ -1,5 +1,5 @@
 # Stage 1: Build the JAR using Maven
-FROM maven:3.9.0-openjdk-17 as builder
+FROM maven:maven:amazoncorretto
 
 
 # Set the working directory inside the container
