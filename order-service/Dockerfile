@@ -1,6 +1,5 @@
-# Stage 1: Build the JAR using Maven
-FROM maven:maven:amazoncorretto
-
+# Stage 1: Build the JAR using Maven and OpenJDK
+FROM maven:3.8.6-openjdk-17 as builder
 
 # Set the working directory inside the container
 WORKDIR /app
@@ -12,8 +11,8 @@ COPY src /app/src
 # Run Maven to build the project (this will create the JAR file)
 RUN mvn clean install
 
-# Stage 2: Create a minimal image with the JAR file
-FROM openjdk:17-jdk-slim
+# Stage 2: Create a minimal image with Amazon Corretto as the runtime
+FROM amazoncorretto:17
 
 # Set the working directory inside the container
 WORKDIR /app
