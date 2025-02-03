@@ -1,5 +1,6 @@
 # Stage 1: Build the JAR using Maven
-FROM maven:3.8.6-openjdk-17-slim as builder
+FROM maven:3.9.0-openjdk-17 as builder
+
 
 # Set the working directory inside the container
 WORKDIR /app
