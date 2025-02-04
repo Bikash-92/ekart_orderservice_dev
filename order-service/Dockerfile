@@ -1,3 +1,4 @@
+FROM eclipse-temurin:latest
 # Stage 1: Build the JAR using Maven
 FROM maven:3.8.4-openjdk-17 AS build-java17
 
@@ -16,7 +17,7 @@ RUN mvn clean install
 
 # Stage 2: Create a minimal image with the JAR file
 #FROM openjdk:17-jdk-slim 
-FROM eclipse-temurin:latest
+
 
 # Set the working directory inside the container
 WORKDIR /app
