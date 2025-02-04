@@ -15,7 +15,8 @@ RUN mvn --version
 RUN mvn clean install
 
 # Stage 2: Create a minimal image with the JAR file
-FROM openjdk:17-jdk-slim
+#FROM openjdk:17-jdk-slim 
+FROM eclipse-temurin:latest
 
 # Set the working directory inside the container
 WORKDIR /app
