@@ -33,7 +33,7 @@ RUN cd /app/target && ls -al
 #COPY /app/target/order-service-0.0.1-SNAPSHOT.jar /app/order-service-0.0.1-SNAPSHOT.jar
 
 # Expose the application port (assuming Spring Boot runs on port 8082)
-EXPOSE 8082
+EXPOSE 8080
 
 # Run the Spring Boot application JAR
 CMD ["java", "-jar", "./target/order-service-0.0.1-SNAPSHOT.jar"]
