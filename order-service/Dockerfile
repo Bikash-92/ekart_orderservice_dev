@@ -22,6 +22,10 @@ RUN mvn clean install
 # Set the working directory inside the container
 WORKDIR /app
 
+RUN pwd
+
+RUN ls -al /app
+
 # Copy the built JAR from the builder image to the runtime image
 COPY /root/.m2/repository/com/ekart/order-service/0.0.1-SNAPSHOT/order-service-0.0.1-SNAPSHOT.jar /app/order-service-0.0.1-SNAPSHOT.jar
 
