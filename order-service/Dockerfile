@@ -23,7 +23,7 @@ RUN mvn clean install
 WORKDIR /app
 
 # Copy the built JAR from the builder image to the runtime image
-COPY target/order-service-0.0.1-SNAPSHOT.jar /app/order-service-0.0.1-SNAPSHOT.jar
+COPY /app/target/order-service-0.0.1-SNAPSHOT.jar /app/order-service-0.0.1-SNAPSHOT.jar
 
 # Expose the application port (assuming Spring Boot runs on port 8082)
 EXPOSE 8082
