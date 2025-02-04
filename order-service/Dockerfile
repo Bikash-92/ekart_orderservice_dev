@@ -30,10 +30,10 @@ RUN cd /app/target && ls -al
 
 
 # Copy the built JAR from the builder image to the runtime image
-COPY /app/target/order-service-0.0.1-SNAPSHOT.jar /app/order-service-0.0.1-SNAPSHOT.jar
+#COPY /app/target/order-service-0.0.1-SNAPSHOT.jar /app/order-service-0.0.1-SNAPSHOT.jar
 
 # Expose the application port (assuming Spring Boot runs on port 8082)
 EXPOSE 8082
 
 # Run the Spring Boot application JAR
-CMD ["java", "-jar", "order-service-0.0.1-SNAPSHOT.jar"]
+CMD ["java", "-jar", "./target/order-service-0.0.1-SNAPSHOT.jar"]
